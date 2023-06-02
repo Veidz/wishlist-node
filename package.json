@@ -7,6 +7,10 @@
     "wishlist",
     "api"
   ],
+  "homepage": "https://github.com/Veidz/wishlist-node",
+  "bugs": {
+    "url": "https://github.com/Veidz/wishlist-node/issues"
+  },
   "scripts": {
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:verbose": "jest --passWithNoTests --runInBandn",
