@@ -1,15 +1,18 @@
 {
   "name": "wishlist-node",
   "version": "1.0.0",
-  "description": "",
+  "description": "Node API for adding wishlist items.",
   "main": "index.js",
+  "keywords": [
+    "wishlist",
+    "api"
+  ],
   "scripts": {
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:verbose": "jest --passWithNoTests --runInBandn",
     "test:staged": "npm test -- --findRelatedTests",
     "test:ci": "npm test -- --coverage"
   },
-  "keywords": [],
   "author": "Veidz",
   "license": "ISC",
   "devDependencies": {
