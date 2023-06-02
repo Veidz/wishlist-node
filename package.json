@@ -2,7 +2,6 @@
   "name": "wishlist-node",
   "version": "1.0.0",
   "description": "Node API for adding wishlist items.",
-  "main": "index.js",
   "keywords": [
     "wishlist",
     "api"
@@ -10,6 +9,13 @@
   "homepage": "https://github.com/Veidz/wishlist-node",
   "bugs": {
     "url": "https://github.com/Veidz/wishlist-node/issues"
+  },  
+  "license": "ISC",
+  "author": "Veidz (https://github.com/Veidz)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Veidz/wishlist-node"
   },
   "scripts": {
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
@@ -17,8 +23,6 @@
     "test:staged": "npm test -- --findRelatedTests",
     "test:ci": "npm test -- --coverage"
   },
-  "author": "Veidz",
-  "license": "ISC",
   "devDependencies": {
     "@types/jest": "^24.0.25",
     "@types/node": "^13.1.6",
