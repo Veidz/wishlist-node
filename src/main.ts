@@ -14,7 +14,7 @@ import ProductRepositoryImpl from './domain/repositories/product-repository'
 async function getMongoDataSource(): Promise<MongoDbProductDataSource> {
     const client: MongoClient = new MongoClient(env.mongoUrl)
     await client.connect()
-    const db = client.db('PRODUCTS_DB')
+    const db = client.db('Wishlist')
 
     const productDatabase: NoSQLDatabaseWrapper = {
         insertOne: async(entity: any) => await db.collection('products').insertOne(entity)
