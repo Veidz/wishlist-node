@@ -9,7 +9,7 @@ class MockCreateProductUseCase implements CreateProductUseCase {
     async execute(product: ProductRequestModel): Promise<InsertOneResult> {
         return {
             acknowledged: true,
-            insertedId: new ObjectId('any_id')
+            insertedId: new ObjectId('647bb3db14b88e8f2798d61e')
         }
     }
 }
@@ -27,6 +27,16 @@ describe('Product Router', () => {
     })
 
     describe('POST /products', () => {
+        it('Should return 201 on use case success', async() => {
+            const inputData = {
+                name: 'any_name',
+                imageUrl: 'any_image_url',
+                productUrl: 'any_product_url'
+            }
+            const response = await request(server).post('/products').send(inputData)
+            expect(response.status).toBe(201)
+        })
+
         it('Should return 500 on use case error', async() => {
             const inputData = {
                 name: 'any_name',
