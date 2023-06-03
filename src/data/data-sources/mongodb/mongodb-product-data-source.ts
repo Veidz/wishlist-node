@@ -1,5 +1,6 @@
 import { type ProductDataSource, type NoSQLDatabaseWrapper } from '../../protocols/data-sources'
 import { type ProductRequestModel } from '../../../domain/entities/product'
+import { type InsertOneResult } from 'mongodb'
 
 export class MongoDbProductDataSource implements ProductDataSource {
     private readonly db: NoSQLDatabaseWrapper
@@ -8,7 +9,7 @@ export class MongoDbProductDataSource implements ProductDataSource {
         this.db = db
     }
 
-    async create(product: ProductRequestModel): Promise<void> {
-        await this.db.insertOne(product)
+    async create(product: ProductRequestModel): Promise<InsertOneResult> {
+        return await this.db.insertOne(product)
     }
 }
