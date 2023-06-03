@@ -1,5 +1,4 @@
-export interface Product {
-    id: string
+export interface ProductRequestModel {
     name: string
     imageUrl?: string
     productUrl: string
