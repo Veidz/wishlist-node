@@ -26,9 +26,9 @@ async function getMongoDataSource(): Promise<MongoDbProductDataSource> {
 (async() => {
     const dataSource = await getMongoDataSource()
 
-    const productMiddleware = ProductsRouter(new CreateProduct(new ProductRepositoryImpl(dataSource)))
+    const productsRouter = ProductsRouter(new CreateProduct(new ProductRepositoryImpl(dataSource)))
 
-    server.use('/products', productMiddleware)
+    server.use('/products', productsRouter)
 
     https.createServer({
         key: fs.readFileSync('certs/key.pem'),

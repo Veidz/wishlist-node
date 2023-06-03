@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import express, { type Request, type Response, type Router } from 'express'
+import ProductsMiddleware from '../middlewares/product-middleware'
 import { type CreateProductUseCase } from '../../domain/protocols/use-cases/product/create-product'
 
 export default function ProductsRouter(
@@ -7,7 +8,7 @@ export default function ProductsRouter(
 ): Router {
     const router = express.Router()
 
-    router.post('/', async(req: Request, res: Response) => {
+    router.post('/', ProductsMiddleware, async(req: Request, res: Response) => {
         try {
             await createProductUseCase.execute(req.body)
             res.status(201).json({ message: 'Created.' })
