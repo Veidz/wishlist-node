@@ -37,6 +37,15 @@ describe('Product Router', () => {
             expect(response.status).toBe(201)
         })
 
+        it('Should return 400 on middleware missing param', async() => {
+            const inputData = {
+                imageUrl: 'any_image_url',
+                productUrl: 'any_product_url'
+            }
+            const response = await request(server).post('/products').send(inputData)
+            expect(response.status).toBe(400)
+        })
+
         it('Should return 500 on use case error', async() => {
             const inputData = {
                 name: 'any_name',
