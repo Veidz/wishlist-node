@@ -1,5 +1,5 @@
 import { ObjectId, type InsertOneResult } from 'mongodb'
-import { type ProductDataSource } from '../../../data/protocols/data-sources'
+import { type ProductDataSource } from '../../../data/protocols/data-sources/product-data-source'
 import { type ProductRequestModel } from '../../../domain/entities/product'
 import { type ProductRepository } from '../../../domain/protocols/repositories/product-repository'
 import ProductRepositoryImpl from '../../../domain/repositories/product-repository'

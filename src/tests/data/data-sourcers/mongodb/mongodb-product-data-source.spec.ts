@@ -1,6 +1,6 @@
 import { ObjectId } from 'mongodb'
 import { MongoDbProductDataSource } from '../../../../data/data-sources/mongodb/mongodb-product-data-source'
-import { type NoSQLDatabaseWrapper } from '../../../../data/protocols/data-sources'
+import { type NoSQLDatabaseWrapper } from '../../../../data/protocols/data-sources/nosql-database-wrapper'
 
 describe('MongoDb Data Source', () => {
     let mockDatabase: NoSQLDatabaseWrapper
