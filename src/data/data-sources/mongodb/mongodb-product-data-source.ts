@@ -1,5 +1,4 @@
-import { type ProductDataSource } from '../../protocols/data-sources/product-data-source'
-import { type NoSQLDatabaseWrapper } from '../../protocols/data-sources/nosql-database-wrapper'
+import { type ProductDataSource, type NoSQLDatabaseWrapper } from '../../protocols/data-sources'
 import { type ProductRequestModel } from '../../../domain/entities/product'
 
 export class MongoDbProductDataSource implements ProductDataSource {
