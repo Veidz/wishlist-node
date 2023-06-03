@@ -2,6 +2,7 @@
 import express, { type Request, type Response, type Router } from 'express'
 import ProductsMiddleware from '../middlewares/product-middleware'
 import { type CreateProductUseCase } from '../../domain/protocols/use-cases/product/create-product'
+import ResultViewModel from '../view-models/result-view-model'
 
 export default function ProductsRouter(
     createProductUseCase: CreateProductUseCase
@@ -11,9 +12,9 @@ export default function ProductsRouter(
     router.post('/', ProductsMiddleware, async(req: Request, res: Response) => {
         try {
             await createProductUseCase.execute(req.body)
-            res.status(201).json({ message: 'Created.' })
+            res.status(201).json(new ResultViewModel(false, 'Created.'))
         } catch (error) {
-            res.status(500).send({ message: 'Error saving data.' })
+            res.status(500).send(new ResultViewModel(true, 'Internal Server Error.'))
         }
     })
 
