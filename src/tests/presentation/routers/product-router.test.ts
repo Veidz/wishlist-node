@@ -31,7 +31,7 @@ describe('Product Router', () => {
             const inputData = {
                 name: 'any_name',
                 imageUrl: 'any_image_url',
-                productUrl: 'any_product_url'
+                itemUrl: 'any_item_url'
             }
             const response = await request(server).post('/products').send(inputData)
             expect(response.status).toBe(201)
@@ -40,7 +40,7 @@ describe('Product Router', () => {
         it('Should return 400 on middleware missing param', async() => {
             const inputData = {
                 imageUrl: 'any_image_url',
-                productUrl: 'any_product_url'
+                itemUrl: 'any_item_url'
             }
             const response = await request(server).post('/products').send(inputData)
             expect(response.status).toBe(400)
@@ -50,7 +50,7 @@ describe('Product Router', () => {
             const inputData = {
                 name: 'any_name',
                 imageUrl: 'any_image_url',
-                productUrl: 'any_product_url'
+                itemUrl: 'any_item_url'
             }
             jest.spyOn(mockCreateProductUseCase, 'execute').mockImplementation(async() => { return await Promise.reject(new Error()) })
             const response = await request(server).post('/products').send(inputData)
