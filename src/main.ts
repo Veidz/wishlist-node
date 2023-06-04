@@ -1,6 +1,5 @@
-import fs from 'fs'
 import { MongoClient } from 'mongodb'
-import https from 'https'
+import http from 'http'
 
 import env from './env'
 import server from './server'
@@ -30,10 +29,12 @@ async function getMongoDataSource(): Promise<MongoDbProductDataSource> {
 
     server.use('/products', productsRouter)
 
-    https.createServer({
-        key: fs.readFileSync('certs/key.pem'),
-        cert: fs.readFileSync('certs/cert.pem')
+    // https.createServer({
+    //     key: fs.readFileSync('certs/key.pem'),
+    //     cert: fs.readFileSync('certs/cert.pem')
+    // }, server).listen(env.port)
+    http.createServer({
     }, server).listen(env.port)
 
-    console.log(`Server is running at https://localhost:${env.port}`)
+    console.log(`Server is running at http://localhost:${env.port}`)
 })().catch(console.error)
