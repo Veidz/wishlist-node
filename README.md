@@ -2,14 +2,20 @@
 
 ## Getting Started
 
-First, create a <code>.env</code> file in the root folder following the <code>.env.example</code> sample.
+First, start mongo server instance with Doccker
 
-After, install the project dependencies:
+```bash
+docker run --name mongo -d mongo
+```
+
+After that, create a <code>.env</code> file in the root folder following the <code>.env.example</code> sample.
+
+Then, install the project dependencies:
 ```bash
 npm install
 ```
 
-Then, run the development server:
+Finally, run the development server:
 ```bash
 npm run dev
 ```
