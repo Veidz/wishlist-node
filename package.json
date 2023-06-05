@@ -20,6 +20,7 @@
   "scripts": {
     "start": "node dist/src/main.js",
     "build": "rimraf dist && tsc",
+    "dev": "npm run build && npm start",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand",
     "test:verbose": "jest --passWithNoTests --runInBand",
     "test:staged": "npm test -- --findRelatedTests",
