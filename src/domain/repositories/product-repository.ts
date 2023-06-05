@@ -1,12 +1,12 @@
 import { type InsertOneResult } from 'mongodb'
-import { type ProductRepository } from '../protocols/repositories/product-repository'
+import { type IProductRepository } from '../protocols/repositories/product-repository'
 import { type ProductRequestModel } from '../entities/product'
-import { type ProductDataSource } from '../../data/protocols/data-sources/product-data-source'
+import { type IProductDataSource } from '../../data/protocols/data-sources/product-data-source'
 
-export default class ProductRepositoryImpl implements ProductRepository {
-    productDataSource: ProductDataSource
+export default class ProductRepository implements IProductRepository {
+    productDataSource: IProductDataSource
 
-    constructor(productDataSource: ProductDataSource) {
+    constructor(productDataSource: IProductDataSource) {
         this.productDataSource = productDataSource
     }
 

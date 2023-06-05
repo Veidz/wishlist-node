@@ -1,10 +1,10 @@
 import { ObjectId, type InsertOneResult } from 'mongodb'
 import { type ProductRequestModel } from '../../../domain/entities/product'
-import { type ProductRepository } from '../../../domain/protocols/repositories/product-repository'
+import { type IProductRepository } from '../../../domain/protocols/repositories/product-repository'
 import CreateProduct from '../../../domain/use-cases/product/create-product'
 
 describe('Create Product Use Case', () => {
-    class MockProductRepository implements ProductRepository {
+    class MockProductRepository implements IProductRepository {
         async createProduct(produt: ProductRequestModel): Promise<InsertOneResult> {
             return {
                 acknowledged: true,
@@ -13,7 +13,7 @@ describe('Create Product Use Case', () => {
         }
     }
 
-    let mockProductRepository: ProductRepository
+    let mockProductRepository: IProductRepository
 
     beforeEach(() => {
         jest.clearAllMocks()

@@ -1,5 +1,5 @@
 import { type InsertOneResult } from 'mongodb'
 
-export interface NoSQLDatabaseWrapper {
+export interface INoSQLDatabaseWrapper {
     insertOne: (entity: any) => Promise<InsertOneResult>
 }

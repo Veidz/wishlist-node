@@ -1,12 +1,12 @@
-import { type ProductDataSource } from '../../protocols/data-sources/product-data-source'
-import { type NoSQLDatabaseWrapper } from '../../protocols/data-sources/nosql-database-wrapper'
+import { type IProductDataSource } from '../../protocols/data-sources/product-data-source'
+import { type INoSQLDatabaseWrapper } from '../../protocols/data-sources/nosql-database-wrapper'
 import { type ProductRequestModel } from '../../../domain/entities/product'
 import { type InsertOneResult } from 'mongodb'
 
-export class MongoDbProductDataSource implements ProductDataSource {
-    private readonly db: NoSQLDatabaseWrapper
+export class MongoDbProductDataSource implements IProductDataSource {
+    private readonly db: INoSQLDatabaseWrapper
 
-    constructor(db: NoSQLDatabaseWrapper) {
+    constructor(db: INoSQLDatabaseWrapper) {
         this.db = db
     }
 

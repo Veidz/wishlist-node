@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import express, { type Request, type Response, type Router } from 'express'
 import ProductsMiddleware from '../middlewares/product-middleware'
-import { type CreateProductUseCase } from '../../domain/protocols/use-cases/product/create-product'
+import { type ICreateProductUseCase } from '../../domain/protocols/use-cases/product/create-product'
 import ResultViewModel from '../view-models/result-view-model'
 
 export default function ProductsRouter(
-    createProductUseCase: CreateProductUseCase
+    createProductUseCase: ICreateProductUseCase
 ): Router {
     const router = express.Router()
 

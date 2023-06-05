@@ -1,12 +1,12 @@
 import { type InsertOneResult } from 'mongodb'
-import { type CreateProductUseCase } from '../../protocols/use-cases/product/create-product'
-import { type ProductRepository } from '../../protocols/repositories/product-repository'
+import { type ICreateProductUseCase } from '../../protocols/use-cases/product/create-product'
+import { type IProductRepository } from '../../protocols/repositories/product-repository'
 import { type ProductRequestModel } from '../../entities/product'
 
-export default class CreateProduct implements CreateProductUseCase {
-    productRepository: ProductRepository
+export default class CreateProduct implements ICreateProductUseCase {
+    productRepository: IProductRepository
 
-    constructor(productRepository: ProductRepository) {
+    constructor(productRepository: IProductRepository) {
         this.productRepository = productRepository
     }
 

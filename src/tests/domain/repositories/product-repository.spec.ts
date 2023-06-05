@@ -1,10 +1,10 @@
 import { ObjectId, type InsertOneResult } from 'mongodb'
-import { type ProductDataSource } from '../../../data/protocols/data-sources/product-data-source'
+import { type IProductDataSource } from '../../../data/protocols/data-sources/product-data-source'
 import { type ProductRequestModel } from '../../../domain/entities/product'
-import { type ProductRepository } from '../../../domain/protocols/repositories/product-repository'
-import ProductRepositoryImpl from '../../../domain/repositories/product-repository'
+import { type IProductRepository } from '../../../domain/protocols/repositories/product-repository'
+import ProductRepository from '../../../domain/repositories/product-repository'
 
-class MockProductDataSource implements ProductDataSource {
+class MockProductDataSource implements IProductDataSource {
     async create(product: ProductRequestModel): Promise<InsertOneResult> {
         return {
             acknowledged: true,
@@ -14,13 +14,13 @@ class MockProductDataSource implements ProductDataSource {
 }
 
 describe('Product Repository', () => {
-    let mockProductDataSource: ProductDataSource
-    let productRepository: ProductRepository
+    let mockProductDataSource: IProductDataSource
+    let productRepository: IProductRepository
 
     beforeEach(() => {
         jest.clearAllMocks()
         mockProductDataSource = new MockProductDataSource()
-        productRepository = new ProductRepositoryImpl(mockProductDataSource)
+        productRepository = new ProductRepository(mockProductDataSource)
     })
 
     describe('createProduct', () => {

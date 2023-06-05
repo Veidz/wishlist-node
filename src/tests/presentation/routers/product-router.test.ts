@@ -1,11 +1,11 @@
 import request from 'supertest'
 import { ObjectId, type InsertOneResult } from 'mongodb'
-import { type CreateProductUseCase } from '../../../domain/protocols/use-cases/product/create-product'
+import { type ICreateProductUseCase } from '../../../domain/protocols/use-cases/product/create-product'
 import { type ProductRequestModel } from '../../../domain/entities/product'
 import server from '../../../server'
 import ProductsRouter from '../../../presentation/routers/product-router'
 
-class MockCreateProductUseCase implements CreateProductUseCase {
+class MockCreateProductUseCase implements ICreateProductUseCase {
     async execute(product: ProductRequestModel): Promise<InsertOneResult> {
         return {
             acknowledged: true,
@@ -15,7 +15,7 @@ class MockCreateProductUseCase implements CreateProductUseCase {
 }
 
 describe('Product Router', () => {
-    let mockCreateProductUseCase: CreateProductUseCase
+    let mockCreateProductUseCase: ICreateProductUseCase
 
     beforeAll(() => {
         mockCreateProductUseCase = new MockCreateProductUseCase()

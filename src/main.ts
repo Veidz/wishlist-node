@@ -4,7 +4,7 @@ import http from 'http'
 import env from './env'
 import server from './server'
 
-import { type NoSQLDatabaseWrapper } from './data/protocols/data-sources/nosql-database-wrapper'
+import { type INoSQLDatabaseWrapper } from './data/protocols/data-sources/nosql-database-wrapper'
 import { MongoDbProductDataSource } from './data/data-sources/mongodb/mongodb-product-data-source'
 import ProductsRouter from './presentation/routers/product-router'
 import CreateProduct from './domain/use-cases/product/create-product'
@@ -15,7 +15,7 @@ async function getMongoDataSource(): Promise<MongoDbProductDataSource> {
     await client.connect()
     const db = client.db('Wishlist')
 
-    const productDatabase: NoSQLDatabaseWrapper = {
+    const productDatabase: INoSQLDatabaseWrapper = {
         insertOne: async(entity: any) => await db.collection('Product').insertOne(entity)
     }
 

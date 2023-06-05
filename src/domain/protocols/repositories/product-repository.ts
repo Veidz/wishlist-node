@@ -1,6 +1,6 @@
 import { type InsertOneResult } from 'mongodb'
 import { type ProductRequestModel } from '../../entities/product'
 
-export interface ProductRepository {
+export interface IProductRepository {
     createProduct: (produt: ProductRequestModel) => Promise<InsertOneResult>
 }
