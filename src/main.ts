@@ -16,7 +16,7 @@ async function getMongoDataSource(): Promise<MongoDbProductDataSource> {
     const db = client.db('Wishlist')
 
     const productDatabase: NoSQLDatabaseWrapper = {
-        insertOne: async(entity: any) => await db.collection('products').insertOne(entity)
+        insertOne: async(entity: any) => await db.collection('Product').insertOne(entity)
     }
 
     return new MongoDbProductDataSource(productDatabase)
