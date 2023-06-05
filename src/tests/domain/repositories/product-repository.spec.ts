@@ -32,14 +32,14 @@ describe('Product Repository', () => {
                 }
             })
             await productRepository.createProduct({
-                name: 'any_name',
-                imageUrl: 'any_image_url',
-                productUrl: 'product_url'
+                Name: 'any_name',
+                ImageUrl: 'any_image_url',
+                ProductUrl: 'product_url'
             })
             expect(mockProductDataSource.create).toHaveBeenCalledWith({
-                name: 'any_name',
-                imageUrl: 'any_image_url',
-                productUrl: 'product_url'
+                Name: 'any_name',
+                ImageUrl: 'any_image_url',
+                ProductUrl: 'product_url'
             })
         })
     })

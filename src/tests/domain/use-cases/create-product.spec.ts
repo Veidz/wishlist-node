@@ -22,9 +22,9 @@ describe('Create Product Use Case', () => {
 
     it('Should return InsertOneResult with correct data', async() => {
         const inputData = {
-            name: 'any_name',
-            imageUrl: 'any_image_url',
-            productUrl: 'product_url'
+            Name: 'any_name',
+            ImageUrl: 'any_image_url',
+            ProductUrl: 'product_url'
         }
 
         jest.spyOn(mockProductRepository, 'createProduct').mockImplementation(async() => {

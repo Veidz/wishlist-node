@@ -6,7 +6,7 @@ export default async function ProductsMiddleware(
     res: Response,
     next: NextFunction
 ): Promise<any> {
-    const requiredFields = ['name', 'productUrl']
+    const requiredFields = ['Name', 'ProductUrl']
     for (const field of requiredFields) {
         if (!req.body[field]) {
             return res.status(400).json(new ResultViewModel(true, `Missing param: ${field}`))

@@ -29,9 +29,9 @@ describe('Product Router', () => {
     describe('POST /products', () => {
         it('Should return 201 on use case success', async() => {
             const inputData = {
-                name: 'any_name',
-                imageUrl: 'any_image_url',
-                productUrl: 'any_product_url'
+                Name: 'any_name',
+                ImageUrl: 'any_image_url',
+                ProductUrl: 'any_product_url'
             }
             const response = await request(server).post('/products').send(inputData)
             expect(response.status).toBe(201)
@@ -39,8 +39,8 @@ describe('Product Router', () => {
 
         it('Should return 400 on middleware missing param', async() => {
             const inputData = {
-                imageUrl: 'any_image_url',
-                productUrl: 'any_product_url'
+                ImageUrl: 'any_image_url',
+                ProductUrl: 'any_product_url'
             }
             const response = await request(server).post('/products').send(inputData)
             expect(response.status).toBe(400)
@@ -48,9 +48,9 @@ describe('Product Router', () => {
 
         it('Should return 500 on use case error', async() => {
             const inputData = {
-                name: 'any_name',
-                imageUrl: 'any_image_url',
-                productUrl: 'any_product_url'
+                Name: 'any_name',
+                ImageUrl: 'any_image_url',
+                ProductUrl: 'any_product_url'
             }
             jest.spyOn(mockCreateProductUseCase, 'execute').mockImplementation(async() => { return await Promise.reject(new Error()) })
             const response = await request(server).post('/products').send(inputData)

@@ -24,16 +24,16 @@ describe('MongoDb Data Source', () => {
             }
         })
         const result = await dataSource.create({
-            name: 'any_name',
-            imageUrl: 'any_image_url',
-            productUrl: 'product_url'
+            Name: 'any_name',
+            ImageUrl: 'any_image_url',
+            ProductUrl: 'product_url'
         })
         expect(result.acknowledged).toBe(true)
         expect(result.insertedId).toEqual(new ObjectId('647bb3db14b88e8f2798d61e'))
         expect(mockDatabase.insertOne).toHaveBeenCalledWith({
-            name: 'any_name',
-            imageUrl: 'any_image_url',
-            productUrl: 'product_url'
+            Name: 'any_name',
+            ImageUrl: 'any_image_url',
+            ProductUrl: 'product_url'
         })
     })
 })

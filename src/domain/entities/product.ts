@@ -1,5 +1,5 @@
 export interface ProductRequestModel {
-    name: string
-    imageUrl?: string
-    productUrl: string
+    Name: string
+    ImageUrl?: string
+    ProductUrl: string
 }
