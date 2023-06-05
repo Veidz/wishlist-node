@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-First, start mongo server instance with Doccker
+First, start mongo server instance with Docker
 
 ```bash
 docker run -e MONGO_INITDB_ROOT_USERNAME=root -e MONGO_INITDB_ROOT_PASSWORD=root -p 27016:27017 -d mongo
