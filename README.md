@@ -1,5 +1,8 @@
 # Wishlist - Node
 
+[Next Frontend](https://github.com/Veidz/wishlist-next)<br/>
+[ASP.NET Backend](https://github.com/Veidz/wishlist-aspnet)
+
 ## Getting Started
 
 First, start mongo server instance with Docker
