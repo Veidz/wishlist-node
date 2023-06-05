@@ -5,7 +5,7 @@
 First, start mongo server instance with Doccker
 
 ```bash
-docker run --name mongo -d mongo
+docker run -e MONGO_INITDB_ROOT_USERNAME=root -e MONGO_INITDB_ROOT_PASSWORD=root -p 27017:27017 mongo
 ```
 
 After that, create a <code>.env</code> file in the root folder following the <code>.env.example</code> sample.
